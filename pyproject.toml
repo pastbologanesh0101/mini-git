@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "minigit"
+version = "0.1.0"
+description = "A content-addressable version control system built from scratch, byte-compatible with Git's object format"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Vishwanathan Tamizharasan" }]
+keywords = ["git", "version-control", "content-addressable", "sha1", "hashing", "from-scratch"]
+
+[project.scripts]
+minigit = "minigit.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[tool.setuptools]
+packages = ["minigit"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
